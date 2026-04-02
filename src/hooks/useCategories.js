@@ -3,18 +3,19 @@ import { supabase } from '../lib/supabase'
 import { useAuth } from '../context/AuthContext'
 
 const DEFAULT_CATEGORIES = [
-  { name: 'Alimentacion', icon: '🍔', color: '#f97316', type: 'expense' },
-  { name: 'Transporte', icon: '🚌', color: '#3b82f6', type: 'expense' },
-  { name: 'Salud', icon: '💊', color: '#ef4444', type: 'expense' },
-  { name: 'Entretenimiento', icon: '🎮', color: '#8b5cf6', type: 'expense' },
-  { name: 'Ropa', icon: '👗', color: '#ec4899', type: 'expense' },
-  { name: 'Educacion', icon: '📚', color: '#06b6d4', type: 'expense' },
-  { name: 'Hogar', icon: '🏠', color: '#84cc16', type: 'expense' },
-  { name: 'Otros gastos', icon: '📦', color: '#6b7280', type: 'expense' },
-  { name: 'Salario', icon: '💼', color: '#10b981', type: 'income' },
-  { name: 'Freelance', icon: '💻', color: '#6366f1', type: 'income' },
-  { name: 'Negocio', icon: '🏪', color: '#f59e0b', type: 'income' },
-  { name: 'Otros ingresos', icon: '💰', color: '#14b8a6', type: 'income' },
+  { name: 'Alimentación', icon: 'UtensilsCrossed', color: '#f97316', type: 'expense' },
+  { name: 'Transporte', icon: 'Car', color: '#3b82f6', type: 'expense' },
+  { name: 'Salud', icon: 'HeartPulse', color: '#ef4444', type: 'expense' },
+  { name: 'Entretenimiento', icon: 'Gamepad2', color: '#8b5cf6', type: 'expense' },
+  { name: 'Ropa', icon: 'Shirt', color: '#ec4899', type: 'expense' },
+  { name: 'Educación', icon: 'GraduationCap', color: '#06b6d4', type: 'expense' },
+  { name: 'Hogar', icon: 'Home', color: '#84cc16', type: 'expense' },
+  { name: 'Mercado', icon: 'ShoppingCart', color: '#f59e0b', type: 'expense' },
+  { name: 'Otros gastos', icon: 'Package', color: '#6b7280', type: 'expense' },
+  { name: 'Salario', icon: 'Briefcase', color: '#10b981', type: 'income' },
+  { name: 'Freelance', icon: 'Laptop', color: '#6366f1', type: 'income' },
+  { name: 'Negocio', icon: 'Store', color: '#f59e0b', type: 'income' },
+  { name: 'Otros ingresos', icon: 'Wallet', color: '#14b8a6', type: 'income' },
 ]
 
 export function useCategories() {
@@ -33,9 +34,7 @@ export function useCategories() {
     setLoading(false)
   }
 
-  useEffect(() => {
-    fetchCategories()
-  }, [user])
+  useEffect(() => { fetchCategories() }, [user])
 
   const seedDefaults = async () => {
     const { data: existing } = await supabase
